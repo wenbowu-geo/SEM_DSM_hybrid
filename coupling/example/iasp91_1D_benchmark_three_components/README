@@ -1,0 +1,42 @@
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+
+This case is the final step of coupling of 1D synthetic (three components) benchmark.
+The 1D background model is the IASP91 velocity model and PREM attenuation model.
+
+How to run this example:
+0. Before run this example, make sure the corresponding SEM and DSM parts has been 
+   successfully finished.
+
+1. Load all the needed modules (e.g. openmpi, intel et al.)
+
+2. compile the codes(the default compiler is 'ifort', you may need to reedit 'Makefile' to 
+   use 'gfortran'). There are two options and you can use either one of them.
+     Option I: linear interpolation scheme
+     > cd SEM_DSM_hybrid/coupling/src/Linear_piecewise_interpolation
+     > make
+     Option II:Lagrange interpolation scheme
+     > cd SEM_DSM_hybrid/coupling/src/Lagrange_interpolation
+     > make 
+
+3. run coupling
+   >cd SEM_DSM_hybrid/coupling/example/iasp91_1D_benchmark_three_components
+   >.run_coupling.sh
+
+4. When it is done, the hybrid synthetics in sac format are saved in the directory 
+   seismograms. You can compare your results with the ones stored in the directory 
+   seismograms_backup and they should be the same. If not, there must be something(s) 
+   wrong. We also provide the DSM synthetics convolved with the SEM source time 
+   functions for benchmark. You can see that the hybrid synthetics well fit the DSM synthetics.
+
+   Note that:
+   (1) The seismograms are displacement and the unit is 10^(-15) meters. Thus, 
+       you need to multiply them with 10^(-15) to get an unit of meter.
+   (2) The maximum resolved frequency is the lower one between the maximum resolved 
+       frequencies of SEM and DSM. In this case, it is 0.125 Hz, equal to the maximum frequency 
+       of Green's functions from DSM.
+   (3) There might be large errors at very low frequencies (i.e. <0.01 Hz), due to errors from 
+       series of sources, including SEM computation, local wavefield approximation and tapering 
+       the SEM synthetics. 
+

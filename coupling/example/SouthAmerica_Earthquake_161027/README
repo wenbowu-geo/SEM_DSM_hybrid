@@ -1,0 +1,43 @@
+----------------------------------------------------------------------
+Duplicate Fig. 11b in the 2017 GJI paper by Wu et. al
+----------------------------------------------------------------------
+
+This case is the last coupling step of simulating the 2016/10/27 Mw6.0 off Southern Chile earthquake..
+The 1D model is the IASP91 velocity model and PREM attenuation model.
+
+
+How to run this example:
+0. Before run this example, make sure the corresponding SEM and DSM parts has been 
+   successfully finished.
+
+1. Load all the needed modules (e.g. openmpi, intel et al.)
+
+2. compile the codes(the default compiler is 'ifort', you may need to reedit 'Makefile' to 
+   use 'gfortran'). There are two options and you can use either one of them.
+     Option I: linear interpolation scheme
+     > cd SEM_DSM_hybrid/coupling/src/Linear_piecewise_interpolation
+     > make
+     Option II:Lagrange interpolation scheme
+     > cd SEM_DSM_hybrid/coupling/src/Lagrange_interpolation
+     > make 
+
+3. run coupling
+   >cd SEM_DSM_hybrid/coupling/example/SouthAmerica_Earthquake_161027
+   >.run_coupling.sh
+
+4. When it is done, the hybrid synthetics in sac format are saved in the directory
+   seismograms. You can compare your results with the ones stored in the directory
+   seismograms_backup and they should be the same. If not, there must be something(s)
+   wrong.
+   Note that:
+   (1) Only vertical components are valid, because we do not compute Green's function
+       due to the two horizontal components.
+   (2) The seismograms are displacement and the unit is 10^(-15) meters. Thus,
+       you need to multiply them with 10^(-15) to get an unit of meter.
+   (3) The maximum resolved frequency is the lower one between the maximum resolved
+       frequencies of SEM and DSM. In this case, it is 0.125 Hz, equal to the maximum frequency
+       of Green's functions from DSM.
+   (4) Only the direct P-waves in the first 60 seconds (or a little bit longer, e.g 120 seconds) 
+       has been checked. Do not use the waves later than that. Because the ocean is truncated at 
+       the boundaries of SEM box, large errors might be present in the very late waves (see the 2017 
+       GJI paper by Wu et. al, especially Fig. S9).

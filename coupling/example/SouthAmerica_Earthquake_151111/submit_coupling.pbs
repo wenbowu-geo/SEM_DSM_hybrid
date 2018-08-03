@@ -1,0 +1,12 @@
+#!/bin/bash
+# Sample PBS for parallel jobs
+#PBS -l nodes=2:ppn=16,walltime=00:50:00
+#PBS -N SA_161027
+#PBS -M wenbow@princeton.edu
+#PBS -e log.err
+#PBS -o log.log
+# Load all the needed modules (e.g. openmpi, intel et al.) 
+module load openmpi intel
+ulimit -s unlimited 
+cd /scratch/gpfs/wenbow/DSM_SEM_hybrid/coupling/example/SouthAmerica_Earthquake_Yunyi_5deg 
+mpirun  ./coupling_integral

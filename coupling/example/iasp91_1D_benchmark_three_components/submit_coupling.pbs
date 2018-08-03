@@ -1,0 +1,12 @@
+#!/bin/bash
+# Sample PBS for parallel jobs
+#PBS -l nodes=2:ppn=16,walltime=00:50:00
+#PBS -N 1D_iasp91_3comp_coupling
+#PBS -M wenbow@princeton.edu
+#PBS -e log.err
+#PBS -o log.log
+# Load all the needed modules (e.g. openmpi, intel et al.) 
+module load openmpi intel
+ulimit -s unlimited 
+cd /scratch/gpfs/wenbow/DSM_SEM_hybrid/coupling/example/iasp91_1D_benchmark_three_components 
+mpirun  ./coupling_integral

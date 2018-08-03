@@ -1,0 +1,8 @@
+To do in the fugure.
+The wrap-around correction (artificial attenuation) is carried out after deconvolution. Actually, it should be done before deconvolution. For the very late signals from SEM simulation, there might be big difference between them. 
+
+The results calculated here are displacement, if comparing them to DSM results, you need to differentiate them or integrate the DSM velocity seismogram.
+
+
+issues or debug
+Segmentation fault reports if the size of array rot_matrix_bound and rot_matrix_station are too large.

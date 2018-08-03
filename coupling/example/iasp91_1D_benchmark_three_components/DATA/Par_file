@@ -1,0 +1,4 @@
+npoints_taper_SEM =  100
+vertical_component=  .true.
+radial_component=  .true.
+transverse_component=  .true.
