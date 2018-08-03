@@ -1,0 +1,12 @@
+#!/bin/bash
+# Sample PBS for parallel jobs
+#PBS -l nodes=7:ppn=16,walltime=00:50:00
+#PBS -N 1D_iasp91_DSMcomputing
+#PBS -M wenbow@princeton.edu
+#PBS -e log.err
+#PBS -o log.log
+# Load all the needed modules (e.g. openmpi, intel et al.) 
+module load openmpi intel
+ulimit -s unlimited 
+cd /scratch/gpfs/wenbow/DSM_SEM_hybrid/DSM/example/iasp91_sinusoidal_topography_no_attenuation 
+mpirun  ./dsmti <dsm_model_input

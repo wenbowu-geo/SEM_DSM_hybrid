@@ -1,0 +1,26 @@
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[53164,0],0] on node tiger-h20c1n4
+  Remote daemon: [[53164,0],6] on node tiger-h25c2n14
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+dsmti              000000000043B70E  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00002BA5C7266680  Unknown               Unknown  Unknown
+libc-2.17.so       00002BA5C75569D7  __sched_yield         Unknown  Unknown
+libpsm2.so.2.1     00002BA5DDA72066  Unknown               Unknown  Unknown
+libpsm2.so.2.1     00002BA5DDA6AC4F  Unknown               Unknown  Unknown
+libpsm2.so.2.1     00002BA5DDA5C1EF  psm2_ep_close         Unknown  Unknown
+mca_mtl_psm2.so    00002BA5DD846287  ompi_mtl_psm2_fin     Unknown  Unknown
+libmpi.so.40.0.0   00002BA5C6C7E17A  ompi_mpi_finalize     Unknown  Unknown
+libmpi_mpifh.so.4  00002BA5C6A11E9A  pmpi_finalize__       Unknown  Unknown
+dsmti              0000000000432553  Unknown               Unknown  Unknown
+dsmti              000000000040945E  Unknown               Unknown  Unknown
+libc-2.17.so       00002BA5C74953D5  __libc_start_main     Unknown  Unknown
+dsmti              0000000000409369  Unknown               Unknown  Unknown

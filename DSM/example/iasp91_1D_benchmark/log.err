@@ -1,0 +1,11 @@
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[44809,0],0] on node tiger-h19c1n11
+  Remote daemon: [[44809,0],6] on node tiger-i26c1n19
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------

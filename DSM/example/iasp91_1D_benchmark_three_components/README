@@ -1,0 +1,22 @@
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+
+This case is the DSM part of
+1D synthetic (three components) benchmark using the IASP91 velocity model and PREM attenuation model.
+
+How to run this example:
+0. Before run this example, make sure the corresponding SEM part has been successfully finished.
+
+1. Load all the needed modules (e.g. openmpi, intel et al.)
+
+2. compile:
+   > cd SEM_DSM_hybrid/DSM/src
+   > make
+
+3. run DSM
+   >cd SEM_DSM_hybrid/DSM/example/iasp91_1D_benchmark_three_components
+   >./run_three_single_forces.sh
+
+4. When DSM computations of all the three single forces are done, go to the directory
+        SEM_DSM_hybrid/coupling/example/1D_iasp91_benchmark_three_components and run run_coupling.sh.
