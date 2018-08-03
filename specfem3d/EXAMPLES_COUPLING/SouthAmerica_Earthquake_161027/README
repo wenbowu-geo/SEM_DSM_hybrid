@@ -1,0 +1,44 @@
+----------------------------------------------------------------------
+Duplicate Fig. 11b in the 2017 GJI paper by Wu et. al
+----------------------------------------------------------------------
+
+In this case, we incorporate real topography/batheymetry to simulate 3D wavefileds 
+for the 2016/10/27 Mw6.0 off Southern Chile earthquake. 
+The backgroud 1D model is the IASP91 velocity model and PREM attenuation model.
+See more details in the 2017 GJI paper by Wu et. al.
+
+
+How to run this example:
+
+0. Read the user manual in SEM_DSM_coupling/doc/manual_SEM_DSM_coupling.pdf
+
+1. Load all the needed modules (e.g. openmpi, intel et al.)
+
+2. in SPECFEM3d root directory, configure, e.g.,
+   > ./configure FC=ifort MPIFC=mpif90
+   'ifort' is prefered. However, you may want to use
+   'FC=gfortran' when 'ifort' is not available
+
+3. compile:
+   > make all
+
+4. compile the codes for converting topography in (lon,lat) cooridinates to that
+   in a cubed-sphere (xi,eta) coordinates
+   Depending on your system's setups, you may need to reedit the 'Makefile'
+   , replace the 'ifort' by 'gfortran' and then compile the codes.
+   > cd SEM_DSM_hybrid/specfem3d/src/cubedsphere_topo
+   > make
+   > cd SEM_DSM_hybrid/specfem3d/src/cubedsphere_topo_ReDefineOceanBot
+   > make
+
+5. run mesher and solver:
+   > cd specfem3d/EXAMPLES_COUPLING/SouthAmerica_Earthquake_161027
+   > ./run_SEM.sh
+
+6. Make sure that the SEM running here is successfuly executed. Then 
+   A. Go to the directory SEM_DSM_hybrid/DSM/example/SouthAmerica_Earthquake_161027 and run run_DSM.sh.
+   B. When DSM computation is completed, go to the directory 
+      SEM_DSM_hybrid/coupling/example/SouthAmerica_Earthquake_161027 and run run_coupling.sh.
+
+---------------------------
+

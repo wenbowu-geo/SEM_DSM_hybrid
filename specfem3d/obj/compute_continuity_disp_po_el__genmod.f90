@@ -1,0 +1,38 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Aug  3 10:43:57 2018
+        ! This source file is for reference only and may not completely
+        ! represent the generated interface used by the compiler.
+        MODULE COMPUTE_CONTINUITY_DISP_PO_EL__genmod
+          INTERFACE 
+            SUBROUTINE COMPUTE_CONTINUITY_DISP_PO_EL(NSPEC_AB,NGLOB_AB, &
+     &IBOOL,ACCEL,VELOC,ACCELS_POROELASTIC,VELOCS_POROELASTIC,          &
+     &ACCELW_POROELASTIC,VELOCW_POROELASTIC,RMASS,                      &
+     &RMASS_SOLID_POROELASTIC,SIMULATION_TYPE,NSPEC_ADJOINT,            &
+     &NUM_COUPLING_EL_PO_FACES,COUPLING_EL_PO_ISPEC,COUPLING_EL_PO_IJK, &
+     &DELTATOVER2)
+              INTEGER(KIND=4) :: NUM_COUPLING_EL_PO_FACES
+              INTEGER(KIND=4) :: NGLOB_AB
+              INTEGER(KIND=4) :: NSPEC_AB
+              INTEGER(KIND=4), INTENT(IN) :: IBOOL(5,5,5,NSPEC_AB)
+              REAL(KIND=8), INTENT(INOUT) :: ACCEL(3,NGLOB_AB)
+              REAL(KIND=8), INTENT(INOUT) :: VELOC(3,NGLOB_AB)
+              REAL(KIND=8), INTENT(INOUT) :: ACCELS_POROELASTIC(3,      &
+     &NGLOB_AB)
+              REAL(KIND=8), INTENT(INOUT) :: VELOCS_POROELASTIC(3,      &
+     &NGLOB_AB)
+              REAL(KIND=8), INTENT(INOUT) :: ACCELW_POROELASTIC(3,      &
+     &NGLOB_AB)
+              REAL(KIND=8), INTENT(INOUT) :: VELOCW_POROELASTIC(3,      &
+     &NGLOB_AB)
+              REAL(KIND=8), INTENT(IN) :: RMASS(NGLOB_AB)
+              REAL(KIND=8), INTENT(IN) :: RMASS_SOLID_POROELASTIC(      &
+     &NGLOB_AB)
+              INTEGER(KIND=4) :: SIMULATION_TYPE
+              INTEGER(KIND=4) :: NSPEC_ADJOINT
+              INTEGER(KIND=4) :: COUPLING_EL_PO_ISPEC(                  &
+     &NUM_COUPLING_EL_PO_FACES)
+              INTEGER(KIND=4) :: COUPLING_EL_PO_IJK(3,25,               &
+     &NUM_COUPLING_EL_PO_FACES)
+              REAL(KIND=8), INTENT(IN) :: DELTATOVER2
+            END SUBROUTINE COMPUTE_CONTINUITY_DISP_PO_EL
+          END INTERFACE 
+        END MODULE COMPUTE_CONTINUITY_DISP_PO_EL__genmod

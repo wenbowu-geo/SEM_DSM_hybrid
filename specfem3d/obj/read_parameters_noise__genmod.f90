@@ -1,0 +1,45 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Aug  3 10:44:12 2018
+        ! This source file is for reference only and may not completely
+        ! represent the generated interface used by the compiler.
+        MODULE READ_PARAMETERS_NOISE__genmod
+          INTERFACE 
+            SUBROUTINE READ_PARAMETERS_NOISE(MYRANK,NREC,NSTEP,         &
+     &NMOVIE_POINTS,ISLICE_SELECTED_REC,XI_RECEIVER,ETA_RECEIVER,       &
+     &GAMMA_RECEIVER,NU,NOISE_SOURCEARRAY,XIGLL,YIGLL,ZIGLL,IBOOL,XSTORE&
+     &,YSTORE,ZSTORE,IREC_MASTER_NOISE,NORMAL_X_NOISE,NORMAL_Y_NOISE,   &
+     &NORMAL_Z_NOISE,MASK_NOISE,NSPEC_AB_VAL,NGLOB_AB_VAL,              &
+     &NUM_FREE_SURFACE_FACES,FREE_SURFACE_ISPEC,FREE_SURFACE_IJK,       &
+     &ISPEC_IS_ACOUSTIC)
+              INTEGER(KIND=4) :: NUM_FREE_SURFACE_FACES
+              INTEGER(KIND=4) :: NGLOB_AB_VAL
+              INTEGER(KIND=4) :: NSPEC_AB_VAL
+              INTEGER(KIND=4) :: NMOVIE_POINTS
+              INTEGER(KIND=4) :: NSTEP
+              INTEGER(KIND=4) :: NREC
+              INTEGER(KIND=4) :: MYRANK
+              INTEGER(KIND=4) :: ISLICE_SELECTED_REC(NREC)
+              REAL(KIND=8) :: XI_RECEIVER(NREC)
+              REAL(KIND=8) :: ETA_RECEIVER(NREC)
+              REAL(KIND=8) :: GAMMA_RECEIVER(NREC)
+              REAL(KIND=8) :: NU(3,3,NREC)
+              REAL(KIND=8) :: NOISE_SOURCEARRAY(3,5,5,5,NSTEP)
+              REAL(KIND=8) :: XIGLL(5)
+              REAL(KIND=8) :: YIGLL(5)
+              REAL(KIND=8) :: ZIGLL(5)
+              INTEGER(KIND=4) :: IBOOL(5,5,5,NSPEC_AB_VAL)
+              REAL(KIND=8) :: XSTORE(NGLOB_AB_VAL)
+              REAL(KIND=8) :: YSTORE(NGLOB_AB_VAL)
+              REAL(KIND=8) :: ZSTORE(NGLOB_AB_VAL)
+              INTEGER(KIND=4) :: IREC_MASTER_NOISE
+              REAL(KIND=8) :: NORMAL_X_NOISE(NMOVIE_POINTS)
+              REAL(KIND=8) :: NORMAL_Y_NOISE(NMOVIE_POINTS)
+              REAL(KIND=8) :: NORMAL_Z_NOISE(NMOVIE_POINTS)
+              REAL(KIND=8) :: MASK_NOISE(NMOVIE_POINTS)
+              INTEGER(KIND=4) :: FREE_SURFACE_ISPEC(                    &
+     &NUM_FREE_SURFACE_FACES)
+              INTEGER(KIND=4) :: FREE_SURFACE_IJK(3,25,                 &
+     &NUM_FREE_SURFACE_FACES)
+              LOGICAL(KIND=4) :: ISPEC_IS_ACOUSTIC(NSPEC_AB_VAL)
+            END SUBROUTINE READ_PARAMETERS_NOISE
+          END INTERFACE 
+        END MODULE READ_PARAMETERS_NOISE__genmod

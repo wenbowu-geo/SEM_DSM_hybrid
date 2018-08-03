@@ -1,0 +1,33 @@
+----------------------------------------------------------------------
+This SEM case is the same as the example 1D_iasp91_benchmark.
+The difference is the DSM and coupling steps. 
+----------------------------------------------------------------------
+
+This case is the SEM part of
+1D synthetic (three components) benchmark using the IASP91 velocity model and PREM attenuation model.
+
+How to run this example:
+
+0. Read the user manual in SEM_DSM_coupling/doc/manual_SEM_DSM_coupling.pdf
+
+1. Load all the needed modules (e.g. openmpi, intel et al.)
+
+2. in SPECFEM3d root directory, configure, e.g.,
+   > ./configure FC=ifort MPIFC=mpif90
+   'ifort' is prefered. However, you may want to use
+   'FC=gfortran' when 'ifort' is not available
+
+3. compile:
+   > make all
+
+4. run mesher and solver:
+   > cd specfem3d/EXAMPLES_COUPLING/1D_iasp91_benchmark
+   > ./run_SEM.sh
+
+5. Make sure that the SEM running here is successfuly executed. Then
+     A. Go to the directory SEM_DSM_hybrid/DSM/example/iasp91_1D_benchmark_three_components and run_three_single_forces.sh.
+     B. When DSM computation is completed, go to the directory
+        SEM_DSM_hybrid/coupling/example/1D_iasp91_benchmark_three_components and run run_coupling.sh.
+
+---------------------------
+

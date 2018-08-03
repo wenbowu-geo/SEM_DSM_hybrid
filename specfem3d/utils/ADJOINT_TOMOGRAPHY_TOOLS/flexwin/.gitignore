@@ -1,0 +1,10 @@
+*.o
+*.mod
+*.a
+*.hed
+*.lis
+*.tbl
+flexwin
+ttimes_mod/remodl
+ttimes_mod/setbrn
+

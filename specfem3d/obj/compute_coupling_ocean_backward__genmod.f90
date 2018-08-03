@@ -1,0 +1,29 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Aug  3 10:43:42 2018
+        ! This source file is for reference only and may not completely
+        ! represent the generated interface used by the compiler.
+        MODULE COMPUTE_COUPLING_OCEAN_BACKWARD__genmod
+          INTERFACE 
+            SUBROUTINE COMPUTE_COUPLING_OCEAN_BACKWARD(NSPEC_AB,NGLOB_AB&
+     &,IBOOL,RMASSX,RMASSY,RMASSZ,RMASS_OCEAN_LOAD,FREE_SURFACE_NORMAL, &
+     &FREE_SURFACE_IJK,FREE_SURFACE_ISPEC,NUM_FREE_SURFACE_FACES,       &
+     &SIMULATION_TYPE,NGLOB_ADJOINT,B_ACCEL)
+              INTEGER(KIND=4) :: NGLOB_ADJOINT
+              INTEGER(KIND=4) :: NUM_FREE_SURFACE_FACES
+              INTEGER(KIND=4) :: NGLOB_AB
+              INTEGER(KIND=4) :: NSPEC_AB
+              INTEGER(KIND=4), INTENT(IN) :: IBOOL(5,5,5,NSPEC_AB)
+              REAL(KIND=8), INTENT(IN) :: RMASSX(NGLOB_AB)
+              REAL(KIND=8), INTENT(IN) :: RMASSY(NGLOB_AB)
+              REAL(KIND=8), INTENT(IN) :: RMASSZ(NGLOB_AB)
+              REAL(KIND=8), INTENT(IN) :: RMASS_OCEAN_LOAD(NGLOB_AB)
+              REAL(KIND=8) :: FREE_SURFACE_NORMAL(3,25,                 &
+     &NUM_FREE_SURFACE_FACES)
+              INTEGER(KIND=4) :: FREE_SURFACE_IJK(3,25,                 &
+     &NUM_FREE_SURFACE_FACES)
+              INTEGER(KIND=4) :: FREE_SURFACE_ISPEC(                    &
+     &NUM_FREE_SURFACE_FACES)
+              INTEGER(KIND=4) :: SIMULATION_TYPE
+              REAL(KIND=8) :: B_ACCEL(3,NGLOB_ADJOINT)
+            END SUBROUTINE COMPUTE_COUPLING_OCEAN_BACKWARD
+          END INTERFACE 
+        END MODULE COMPUTE_COUPLING_OCEAN_BACKWARD__genmod

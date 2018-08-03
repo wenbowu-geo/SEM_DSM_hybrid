@@ -1,0 +1,34 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Aug  3 10:43:33 2018
+        ! This source file is for reference only and may not completely
+        ! represent the generated interface used by the compiler.
+        MODULE GET_JACOBIAN_BOUNDARY_FACE__genmod
+          INTERFACE 
+            SUBROUTINE GET_JACOBIAN_BOUNDARY_FACE(MYRANK,NSPEC,         &
+     &XSTORE_DUMMY,YSTORE_DUMMY,ZSTORE_DUMMY,IBOOL,NGLOB,DERSHAPE2D_X,  &
+     &DERSHAPE2D_Y,DERSHAPE2D_BOTTOM,DERSHAPE2D_TOP,WGLLWGLL_XY,        &
+     &WGLLWGLL_XZ,WGLLWGLL_YZ,ISPEC,IFACE,JACOBIAN2DW_FACE,NORMAL_FACE, &
+     &NGLLA,NGLLB,NGNOD2D)
+              INTEGER(KIND=4) :: NGNOD2D
+              INTEGER(KIND=4) :: NGLLB
+              INTEGER(KIND=4) :: NGLLA
+              INTEGER(KIND=4) :: NGLOB
+              INTEGER(KIND=4) :: NSPEC
+              INTEGER(KIND=4) :: MYRANK
+              REAL(KIND=8) :: XSTORE_DUMMY(NGLOB)
+              REAL(KIND=8) :: YSTORE_DUMMY(NGLOB)
+              REAL(KIND=8) :: ZSTORE_DUMMY(NGLOB)
+              INTEGER(KIND=4) :: IBOOL(5,5,5,NSPEC)
+              REAL(KIND=8) :: DERSHAPE2D_X(2,NGNOD2D,5,5)
+              REAL(KIND=8) :: DERSHAPE2D_Y(2,NGNOD2D,5,5)
+              REAL(KIND=8) :: DERSHAPE2D_BOTTOM(2,NGNOD2D,5,5)
+              REAL(KIND=8) :: DERSHAPE2D_TOP(2,NGNOD2D,5,5)
+              REAL(KIND=8) :: WGLLWGLL_XY(5,5)
+              REAL(KIND=8) :: WGLLWGLL_XZ(5,5)
+              REAL(KIND=8) :: WGLLWGLL_YZ(5,5)
+              INTEGER(KIND=4) :: ISPEC
+              INTEGER(KIND=4) :: IFACE
+              REAL(KIND=8) :: JACOBIAN2DW_FACE(NGLLA,NGLLB)
+              REAL(KIND=8) :: NORMAL_FACE(3,NGLLA,NGLLB)
+            END SUBROUTINE GET_JACOBIAN_BOUNDARY_FACE
+          END INTERFACE 
+        END MODULE GET_JACOBIAN_BOUNDARY_FACE__genmod

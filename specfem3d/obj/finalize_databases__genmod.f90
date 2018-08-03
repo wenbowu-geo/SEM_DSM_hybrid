@@ -1,0 +1,9 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Aug  3 10:43:01 2018
+        ! This source file is for reference only and may not completely
+        ! represent the generated interface used by the compiler.
+        MODULE FINALIZE_DATABASES__genmod
+          INTERFACE 
+            SUBROUTINE FINALIZE_DATABASES
+            END SUBROUTINE FINALIZE_DATABASES
+          END INTERFACE 
+        END MODULE FINALIZE_DATABASES__genmod

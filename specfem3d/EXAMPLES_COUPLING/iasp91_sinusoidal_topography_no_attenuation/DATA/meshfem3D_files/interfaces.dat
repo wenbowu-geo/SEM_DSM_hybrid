@@ -1,0 +1,19 @@
+# number of interfaces
+ 3
+#
+# We describe each interface below, structured as a 2D-grid, with several parameters : 
+# number of points along XI and ETA, minimal XI ETA coordinates 
+# and spacing between points which must be constant.
+# Then the records contain the Z coordinates of the NXI x NETA points.
+#
+# interface number 1 (topography, top of the mesh)
+# SUPPRESS_UTM_PROJECTION  NXI  NETA LONG_MIN   LAT_MIN    SPACING_XI SPACING_ETA
+ .true.                   110 110 -0.2        -0.2      0.05d0    0.05d0
+ topo_Moho.dat
+ .true.                   110 110 -0.2        -0.2      0.05d0    0.05d0
+ topo_Midcrust.dat
+ .true.                   320 320 -0.1        -0.1      0.01d0    0.01d0
+ topo_surf.dat
+7
+2
+2

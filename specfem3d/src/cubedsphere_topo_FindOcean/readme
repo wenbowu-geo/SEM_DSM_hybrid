@@ -1,0 +1,35 @@
+The code use simple linear inerpolation to convert the real topography in longitude-latitude system into that in a cubed spehre xi-eta system. Next, the file "your_example_folder/DATA/meshfem3D_files/real_bathymetry_topography" is used in the step xmeshfem3D, in which the elements are classified as solid or fluid (ocean) media types.
+
+!USAGE: (1) Go to your example folder.
+        (2) run this script, e.g. ../../bin/xcubedsphere_topo_FindOcean ./DATA/meshfem3D_files/SA_real_topo.dat 540 540 -0.2        -0.2d0      0.01    0.01
+
+ The above command converts the topography "SA_real_topo.dat" model in the lon-lat coordinate system into that in a cubed sphere (xi-eta) coordinate system. The converted topography are saved in the file your_example_folder/DATA/meshfem3D_files/real_bathymetry_topography. This file name is used to determine whether the element is solid or fluid (ocean).
+
+
+******************************************************************************
+Input arguments:
+ You need to provide seven parameters for running this script. For example, in the above commend, the first input argument "./DATA/meshfem3D_files/SA_real_topo.dat" gives the name of topography model, as a function of longitude and latitude coordinates. This file has the below format
+
+! This file SA_real_topo.dat has the below format
+!-------------- the format of SA_real_topo.dat----------------------
+!  nlongitude nlatitude
+!  origin_longitude origin_latitude
+!  space_longitude space_latitude
+!  topography(lat0,lon0) topography(lat0,lon0+dlon) topography(lat0,lon0+2*dlon) topography(lat0,lon0+3*dlon) ...
+!  topography(lat0+dlat,lon0) topography(lat0+dlat,lon0+dlon) ...
+!  ...
+!  topography(lat0+(nlongitude-1)*dlat,lon0) ... topography(lat0+(nlongitude-1)*dlat,lon0+(nlon-1)*dlon) 
+
+!------------------------------------------------------------------
+! Be careful!!! (1) The first three lines privide some basic information of this file.
+! After that, each line is compoded of topography at one latitude and all the longitudes.
+Or you can change the lines 280-285 in cubed_topo.f90 script to fit your model. (2) the longitude should be between 0-360deg.
+
+
+
+
+ The remained six input arguments are nxi=540, neta=540, origin_xi=-0.2, origion_eta=-0.2, space_xi=0.01 and space_eta=0.01
+********************************************************************************
+
+
+To check the model, you can set SAVE_MESH_FILES=.true. in Par_file and use paraview to view the model. Another way to check it is via the shaking movie of the surfcafe.

@@ -1,0 +1,14 @@
+# number of interfaces
+ 1
+#
+# We describe each interface below, structured as a 2D-grid, with several parameters : 
+# number of points along XI and ETA, minimal XI ETA coordinates 
+# and spacing between points which must be constant.
+# Then the records contain the Z coordinates of the NXI x NETA points.
+#
+# interface number 1 (topography, top of the mesh)
+# SUPPRESS_UTM_PROJECTION  NXI(lon)  NETA(lat) Lat_MIN   Lon_MIN    SPACING_XI(lon) SPACING_ETA(lat)
+#topography_file basement_topo. 
+.true.           601        601 -3.0 -3.0 0.01   0.01
+latlon_surf_topo.dat  
+3

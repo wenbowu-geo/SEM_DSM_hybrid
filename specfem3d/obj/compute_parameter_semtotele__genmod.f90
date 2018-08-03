@@ -1,0 +1,38 @@
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Aug  3 10:42:43 2018
+        ! This source file is for reference only and may not completely
+        ! represent the generated interface used by the compiler.
+        MODULE COMPUTE_PARAMETER_SEMTOTELE__genmod
+          INTERFACE 
+            SUBROUTINE COMPUTE_PARAMETER_SEMTOTELE(TELE_IXLOW,          &
+     &TELE_IXHIGH,TELE_IYLOW,TELE_IYHIGH,TELE_IRTOP,TELE_IRBOT,         &
+     &TELEELE_NXLOW,TELEELE_NXHIGH,TELEELE_NYLOW,TELEELE_NYHIGH,        &
+     &TELEELE_NRTOP,TELEELE_NRBOT,IPROC_XI,IPROC_ETA,NEX_XI,NEX_ETA,    &
+     &NEX_PER_PROC_XI,NEX_PER_PROC_ETA,NER,USE_REGULAR_MESH,NDOUBLINGS, &
+     &NER_DOUBLINGS,DEBUG_COUPLING,MYRANK)
+              INTEGER(KIND=4) :: TELE_IXLOW
+              INTEGER(KIND=4) :: TELE_IXHIGH
+              INTEGER(KIND=4) :: TELE_IYLOW
+              INTEGER(KIND=4) :: TELE_IYHIGH
+              INTEGER(KIND=4) :: TELE_IRTOP
+              INTEGER(KIND=4) :: TELE_IRBOT
+              INTEGER(KIND=4) :: TELEELE_NXLOW
+              INTEGER(KIND=4) :: TELEELE_NXHIGH
+              INTEGER(KIND=4) :: TELEELE_NYLOW
+              INTEGER(KIND=4) :: TELEELE_NYHIGH
+              INTEGER(KIND=4) :: TELEELE_NRTOP
+              INTEGER(KIND=4) :: TELEELE_NRBOT
+              INTEGER(KIND=4) :: IPROC_XI
+              INTEGER(KIND=4) :: IPROC_ETA
+              INTEGER(KIND=4) :: NEX_XI
+              INTEGER(KIND=4) :: NEX_ETA
+              INTEGER(KIND=4) :: NEX_PER_PROC_XI
+              INTEGER(KIND=4) :: NEX_PER_PROC_ETA
+              INTEGER(KIND=4) :: NER
+              LOGICAL(KIND=4) :: USE_REGULAR_MESH
+              INTEGER(KIND=4) :: NDOUBLINGS
+              INTEGER(KIND=4) :: NER_DOUBLINGS(2)
+              LOGICAL(KIND=4) :: DEBUG_COUPLING
+              INTEGER(KIND=4) :: MYRANK
+            END SUBROUTINE COMPUTE_PARAMETER_SEMTOTELE
+          END INTERFACE 
+        END MODULE COMPUTE_PARAMETER_SEMTOTELE__genmod

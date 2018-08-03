@@ -1,0 +1,17 @@
+run this code under the folder case_name/work/.  This code is to form the file real_bathymetry_topography in cubed spehre coordinates, which is used to determine ocean or solid media. We do not use ../../bin/xcubed_topo_latmaxFirst, because there is no taper at edges.
+Additional files are needed for this code. The first one is "latlon_interfaces.dat" saved under the folder in_data_files/meshfem3D_files. Other files include topograpy information for all the interfaces.
+
+you need to modify the files "interfaces.dat" and "latlon_interfaces.dat". For example, if more than 1 interfaces are listed in the original file interfaces.dat, but you only want to convert the topography for only one interface. For this case, you have to delete other interfaces listed the file interfaces.dat and latlon_interfaces.dat, because the code is trying to convert the topography for all the interfaces listed there.
+
+IMPORTANT!!!!!!!:  The present version code only works for the top interface (such as free surface), because the projected topography are tapered to zero towards the boundaries. That means the basement topography is zero. The tapering is required by coupling theroy, because DSM and SEM have to match with each other on the boundary. But we know the basement topography are not necessarily zero. So you have to remove the basement first, run this code and then add the basement back.
+
+latlon_interfaces.dat: 
+(1)The format of this file is the same with interface.dat.
+(2)The names of the topography files(inlcude only one column topo(latitude,longitude)) are listed in the file "latlon_interfaces.dat".
+
+In each one topograpy file, the topography(latitude,longitude) is saved by using two loops.(1) The first loop is longitude (line 241 in cubed_topo.f90) and latitude is the next. (2)The information of lon0,lat0,dlat and dlon are saved in the file "latlon_interfaces.dat". (3) the longitude should be between (0-360deg)
+
+
+Todo in the future
+The values of basement_topography for each interface are different. The values should be from the file dsm_input_file. You must keep basement_topography of each interface consistent with the file dsm_input_file, because structure on the five boundaries in SEM should match DSM 1D structure.
+

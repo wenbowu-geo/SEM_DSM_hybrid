@@ -1,0 +1,21 @@
+    do while(ilayer_renewed.lt.nlayers_slab.and.depth.gt.depth_renewedlayer)
+        depth_oldlayer=depth_renewedlayer
+        ilayer_renewed=ilayer_renewed+1
+        depth_renewedlayer=(slabdepth(ilon_find,ilat_find,ilayer_renewed)*(1.0-ilon_fraction_remained)+&
+                 slabdepth(ilon_find+1,ilat_find,ilayer_renewed)*ilon_fraction_remained)*(1.0-ilat_fraction_remained)+&
+                (slabdepth(ilon_find,ilat_find+1,ilayer_renewed)*(1.0-ilon_fraction_remained)+&
+                 slabdepth(ilon_find+1,ilat_find+1,ilayer_renewed)*ilon_fraction_remained)*ilat_fraction_remained
+    end do
+    ratio_between_depths=(depth-depth_oldlayer)/(depth_renewedlayer-depth_oldlayer)
+    taper_renewed=(slabtaper(ilon_find,ilat_find,ilayer_renewed)*(1.0-ilon_fraction_remained)+&
+                 slabtaper(ilon_find+1,ilat_find,ilayer_renewed)*ilon_fraction_remained)*(1.0-ilat_fraction_remained)+&
+                (slabtaper(ilon_find,ilat_find+1,ilayer_renewed)*(1.0-ilon_fraction_remained)+&
+                 slabtaper(ilon_find+1,ilat_find+1,ilayer_renewed)*ilon_fraction_remained)*ilat_fraction_remained
+    dep_slabcoord_renewed=thickness_onelayer*(ilayer_renewed-1)
+
+    taper_old=(slabtaper(ilon_find,ilat_find,ilayer_renewed-1)*(1.0-ilon_fraction_remained)+&
+                 slabtaper(ilon_find+1,ilat_find,ilayer_renewed-1)*ilon_fraction_remained)*(1.0-ilat_fraction_remained)+&
+                (slabtaper(ilon_find,ilat_find+1,ilayer_renewed-1)*(1.0-ilon_fraction_remained)+&
+                 slabtaper(ilon_find+1,ilat_find+1,ilayer_renewed-1)*ilon_fraction_remained)*ilat_fraction_remained
+    dep_slabcoord_old=thickness_onelayer*(ilayer_renewed-2)
+

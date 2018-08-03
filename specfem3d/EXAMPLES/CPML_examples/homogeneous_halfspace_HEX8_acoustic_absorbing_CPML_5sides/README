@@ -1,0 +1,13 @@
+----------------------------------------------------------------------
+README
+----------------------------------------------------------------------
+
+This example creates a homogeneous halfspace, i.e. a single volume block with a
+constant acoustic material property and runs a forward simulation. The mesh uses
+CPML elements as absorbing boundaries.
+
+To run this example, type:
+
+> ./run_this_example.sh
+
+
