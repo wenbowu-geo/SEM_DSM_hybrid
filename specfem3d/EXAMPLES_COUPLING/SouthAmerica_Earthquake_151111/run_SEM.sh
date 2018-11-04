@@ -118,7 +118,7 @@ echo
 #It is similar to what we deal with the free surface above.
 #However, topography is not tapered at SEM box boundaries. xmeshfem3D will read this 
 #file and determine each elements as fluid (ocean) or solid media type.
-../../bin/xcubedsphere_topo_FindOcean ./DATA/meshfem3D_files/SA_real_topo.dat 540 540 -0.2        -0.2      0.01d0    0.01d0
+../../bin/xcubedsphere_topo_FindOcean ./DATA/meshfem3D_files/SA_real_topo.dat 740 740 -0.2        -0.2      0.01d0    0.01d0
 
 
 #***************************************************************************************
