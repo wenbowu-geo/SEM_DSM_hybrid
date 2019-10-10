@@ -11,7 +11,7 @@
  .true.                   110 110 -0.2        -0.2      0.05d0    0.05d0
  topo_Moho.dat
  .true.                   110 110 -0.2        -0.2      0.05d0    0.05d0
- topo_Midrust.dat
+ topo_Midcrust.dat
  .true.                   540 540 -0.2        -0.2      0.01d0    0.01d0
  topo_botOC.dat
  .true.                   540 540 -0.2        -0.2      0.01d0    0.01d0
