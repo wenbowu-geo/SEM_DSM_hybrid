@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-dir_SEM=../../../specfem3d/EXAMPLES_COUPLING/SouthAmerica_Earthquake_161027_6deg
+dir_SEM=../../../specfem3d/EXAMPLES_COUPLING/SouthAmerica_Earthquake_161027
 dir_DSM=../../../DSM/example/SouthAmerica_Earthquake_161027
 
 #parameters in DATA/Par_file
